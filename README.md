@@ -8,6 +8,11 @@ The container can also be found on docker hub:
 
 
 ## Run
+### Using docker-compose:
+```
+docker-compose up -d
+```
+### Using docker run:
 To run the container, you need to map the corresponding input and output devices as well:
 ```
 docker run -d --device="/dev/input" --device="/dev/snd" --device=/dev/dri --group-add video -v /etc/localtime:/etc/localtime:ro -p 8080:8080 -p 9777:9777/udp nordewal/kodi-gbm
