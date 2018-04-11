@@ -14,7 +14,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - kodi:/root/.kodi
-      - /mnt:/mnt
+      - /media:/media # my media store
     ports:
       - "8080:8080"
       - "9777:9777/udp"
