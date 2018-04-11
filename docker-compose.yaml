@@ -1,0 +1,24 @@
+# The "init:" keyword, below, requires either version "2.2"
+# or "2.3".
+version: "2.3"
+
+services:
+  lms:
+    image: nordewal/kodi-gbm
+    devices:
+      - "/dev/input:/dev/input"
+      - "/dev/snd:/dev/snd"
+      - "/dev/dri:/dev/dri"
+    group_add:
+      - video
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - kodi:/root/.kodi
+      - /mnt:/mnt
+    ports:
+      - "8080:8080"
+      - "9777:9777/udp"
+    init: true
+
+volumes:
+  kodi:
