@@ -1,6 +1,6 @@
 # docker-kodi-gbm
 
-from base/archlinux
+from archlinux/base
 maintainer nordewal "nordewal@gmail.com"
 
 # Update & install yaourt
@@ -36,5 +36,5 @@ ADD advancedsettings.xml /root/.kodi/userdata/advancedsettings.xml
 
 VOLUME /root/.kodi
 
-EXPOSE 8080/tcp 9777/udp
+EXPOSE 8080/tcp 9777/udp 9090/tcp
 CMD ["/usr/sbin/kodi"]
