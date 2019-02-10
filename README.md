@@ -8,9 +8,22 @@ The container can also be found on docker hub:
 
 
 ## Run
+### Using docker-compose:
+```
+docker-compose up -d
+```
+### Using docker run:
 To run the container, you need to map the corresponding input and output devices as well:
 ```
 docker run -d --device="/dev/input" --device="/dev/snd" --device=/dev/dri --group-add video -v /etc/localtime:/etc/localtime:ro -p 8080:8080 -p 9777:9777/udp nordewal/kodi-gbm
+```
+
+## UDEV rule
+Start kodi when TV is powered on. Stop is done using shutdown timer of kodi.
+```
+# Triggered when HDMI/TV is powered on/off
+
+KERNELS=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/sudo -u joschi /usr/local/bin/docker-compose -f /home/joschi/home-services/kodi/docker-compose.yaml up -d"
 ```
 
 ## Build
