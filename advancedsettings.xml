@@ -3,5 +3,6 @@
         <esallinterfaces>true</esallinterfaces>
         <webserver>true</webserver>
         <zeroconf>true</zeroconf>
+        <webserverpassword>1234</webserverpassword>
     </services>
 </advancedsettings>
