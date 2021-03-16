@@ -5,7 +5,7 @@ maintainer nordewal "nordewal@gmail.com"
 
 # Update & install yaourt
 RUN pacman -Syu --noconfirm && \
-    pacman -S --noconfirm kodi-gbm kodi-addon-inputstream-adaptive
+    pacman -S --noconfirm kodi-gbm kodi-addon-inputstream-adaptive nss nspr
 #    pacman --noconfirm -Rns $(pacman -Qtdq)
 
 # enable webserver by default
