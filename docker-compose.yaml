@@ -17,7 +17,9 @@ services:
       - /media:/media # my media store
     ports:
       - "8080:8080"
+      - "8081:9090"
       - "9777:9777/udp"
+    command: /usr/lib/kodi/kodi-gbm
     init: true
 
 volumes:
